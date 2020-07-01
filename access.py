@@ -1,5 +1,17 @@
 import paramiko, sys, os
 from scp import SCPClient
+import boxsdk
+
+box_token = 'ksuhvHqgIreinhgzvyo4EaZzFAJ961Ym'
+release_locator = '/Users/utsav/Documents/releases'
+def get_box_client():
+    oauth = boxsdk.OAuth2(
+        client_id='f5qebb99vwnebdrdok3wv7ew4pk84nl3',
+        client_secret='cLwt5hj96589T15SG6lAp11fZYBsqyel',
+        access_token='rVSyiCPelJx3hPYPquM8Gy9ZRuLvoCHl',
+    )
+    client = boxsdk.Client(oauth)
+    return client
 
 def client_ssh(ip, username, password):
     remote_conn_pre=paramiko.SSHClient()

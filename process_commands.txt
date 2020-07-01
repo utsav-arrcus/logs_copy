@@ -1,10 +1,10 @@
-cd tmp
-mkdir <issue_folder>
-mkdir <issue_folder>/arcos
+cd /tmp
+mkdir /tmp/<issue_folder>
+mkdir /tmp/<issue_folder>/arcos
 cd <issue_folder>
-cp -r /var/log/arcos/* arcos/
-cp /var/log/syslog syslog
-cp /var/log/spyder.log spyder.log
-confd --status > confd_status.txt
+cp -r /var/log/arcos/* /tmp/<issue_folder>/arcos/
+cp /var/log/syslog /tmp/<issue_folder>/syslog
+cp /var/log/spyder.log /tmp/<issue_folder>/spyder.log
+confd --status > /tmp/<issue_folder>/confd_status.txt
 cd ..
-tar -cvf <issue_folder>.tar <issue_folder>/
+tar -cvf /tmp/<issue_folder>.tar /tmp/<issue_folder>/
